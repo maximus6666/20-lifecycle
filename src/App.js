@@ -1,23 +1,12 @@
-import logo from './logo.svg';
 import './App.css';
+import Timer from "./components/Timer.js";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>Timer</h1>
+      <Timer time={5000} autostart={false}/>
+      <Timer onTick={(time) => console.log("Залишилось часу " + time)} time={20000} autostart={true} step={2000}/>
     </div>
   );
 }
