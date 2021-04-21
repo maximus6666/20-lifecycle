@@ -37,8 +37,7 @@ export default class Timer extends React.Component {
             const id = setInterval(() => {
                 const updatedTime = this.state.time - this.state.step;
                 this.state.onTick(updatedTime)
-                this.setState({
-                    time: updatedTime});
+                this.setState({time: updatedTime});
     
                 if (this.state.time === 0) {
                     clearInterval(id);
@@ -57,10 +56,8 @@ export default class Timer extends React.Component {
         }
     }
 
-    componentDidMount() {
-        let {autostart} = this.props;
-               
-        if (autostart === true) {
+    componentDidMount() {               
+        if (this.props.autostart) {
             this.startTimer();
         }
     }
